@@ -4,6 +4,7 @@
       <swiper-slide v-for='item of swiperList' :key='item.id'>
         <img class="swiper-img" :src="item.imgUrl"/>
       </swiper-slide>
+      <!-- 页码 也就是小圆点 -->
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
   </div>
@@ -16,7 +17,8 @@ export default {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
-        loop: true // 控制轮播插件支持循环轮播
+        loop: true, // 控制轮播插件支持循环轮播
+        autoplay: 3000
       },
       swiperList: [
         {id: '0001', imgUrl: 'http://img1.qunarzz.com/sight/p0/2003/6c/6cd013b870474899a3.img.jpg_350x240_91f1395b.jpg'},
@@ -34,9 +36,8 @@ export default {
     overflow hidden
     width 100%
     height 0
-    padding-bottom 4rem
+    padding-bottom 68.6%
     background-color #eee
     .swiper-img
       width 100%
-      height 4rem
 </style>

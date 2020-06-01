@@ -21,25 +21,25 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # 初始化（都在main.js中操作）
-1. 在main.js中引基础样式和解决1像素问题的样式（reset.css border.css）
+## 1. 在main.js中引基础样式和解决1像素问题的样式（reset.css border.css）
 ```js
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 ```
 
-2. 解决移动端300ms点击事件延迟问题（npm install fastclick --save）
+## 2. 解决移动端300ms点击事件延迟问题（npm install fastclick --save）
 ```js
 import fastClick from 'fastclick'
 fastClick.attach(document.body)
 ```
 
-3. 在iconfont网上新建项目文件夹 ==>
+## 3. 在iconfont网上新建项目文件夹 ==>
 https://www.iconfont.cn/
 
 # 轮播图
-1. 下载轮播图插件 vue-awesome-swiper(稳定版本：v2.6.7) 
+## 1. 下载轮播图插件 vue-awesome-swiper(稳定版本：v2.6.7) 
 npm install vue-awesome-swiper@2.6.7 --save
-2. 在main.js引入
+## 2. 在main.js引入
 ```js
 // import
 import Vue from 'vue'
@@ -65,7 +65,7 @@ Vue.use(VueAwesomeSwiper)
   </swiper>
 ```
 
-3. 修改轮播图背景
+## 3. 修改轮播图背景
 * data中返回一个数据：swiperOption
 * stylus样式 (style lang="stylus" scoped)(/style) scoped表示该样式只能在当前模板中生效！
 * 防止加载时页面抖动+自适应：（解决网速差时图片不能及时加载腾出位置的问题）
@@ -97,7 +97,7 @@ swiperOption: {
   background #fff
 ```
 
-4. git补充
+## 4. git补充
 
 开发前：
 - 在线上新建分支index-swiper
@@ -118,4 +118,68 @@ swiperOption: {
 
 
 
-# 
+# icons图标
+## 1. 单行文字超出隐藏
+```css
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+```
+
+## 2. 多页轮播
+> 根据数据项的不同，自动化地构建页码，实现多页切换功能。
+```js
+computed: {
+  pages () {
+    const pages = [];
+
+    this.iconList.forEach((item, index)=>{
+      const page = Math.floor(index / 8);
+      if(!pages[page]) {
+        pages[page] = [];
+      }
+      pages[page].push(item);
+    })
+
+    return pages;
+  }
+}
+```
+
+## 3. 添加vue-devtools
+在谷歌应用商店搜索并下载安装，该工具方便于查看vue数据结构。
+
+## 补充：解决文件路径太长的问题
+> 添加文档位置配置：打开build文件夹下的webpack.base.config.js 找到resolve选项。
+```js
+alias: {
+  'styles': resolve('src/assets/styles')
+}
+```
+> 使用：@import '~styles/variables.styl'
+
+> 相当于：@import 'src/assets/styles/variables.styl'
+
+# recommand热门推荐
+## 1. flex: 1
+分配剩余父元素部分的宽度。
+https://blog.csdn.net/m0_37058714/article/details/80765562
+
+## 2. 解决...未显示的问题
+```css
+min-width: 0;
+或者用：over-flow: hidden;
+```
+
+## 补充：解决git合并发生冲突问题
+https://blog.csdn.net/mynameislinduan/article/details/82147965
+
+1. 在需要修改的功能分支下修改代码
+2. 改完提交到线上
+3. 切换到其他分支合并：用git add xxx，把你修改的文件全部都添加进去。
+4. 最后，用git commit -m '描述' 提交，完成。
+
+
+
+
+# 用axios发送ajax请求

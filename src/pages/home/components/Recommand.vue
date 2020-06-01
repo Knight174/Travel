@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommandList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,24 +17,27 @@
 <script>
 export default {
   name: 'HomeRecommand',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      recommandList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg',
-        title: '灵山大佛',
-        desc: '灵山胜境，虔诚佛音'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg',
-        title: '灵山大佛',
-        desc: '灵山胜境，虔诚佛音'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg',
-        title: '灵山大佛',
-        desc: '灵山胜境，虔诚佛音'
-      }]
+      // recommandList: [{
+      //   id: '0001',
+      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg',
+      //   title: '灵山大佛',
+      //   desc: '灵山胜境，虔诚佛音'
+      // }, {
+      //   id: '0002',
+      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg',
+      //   title: '灵山大佛',
+      //   desc: '灵山胜境，虔诚佛音'
+      // }, {
+      //   id: '0003',
+      //   imgUrl: 'http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg',
+      //   title: '灵山大佛',
+      //   desc: '灵山胜境，虔诚佛音'
+      // }]
     }
   }
 }

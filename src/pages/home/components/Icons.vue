@@ -90,7 +90,4 @@ export default {
         line-height .44rem
         color $darkTextColor
         ellipsis()
-        // overflow: hidden
-        // white-space: nowrap
-        // text-overflow: ellipsis
 </style>

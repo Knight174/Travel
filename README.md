@@ -183,3 +183,86 @@ https://blog.csdn.net/mynameislinduan/article/details/82147965
 
 
 # 用axios发送ajax请求
+axios是一个第三方跨平台数据请求库。
+## 1. axios
+> npm install axios --save
+
+## 2. axios使用
+组件太多，如果分开一个组件对应请求一次数据，那么将会耗费大量的性能。所以，为了解决性能问题，做法是由父组件统一接收一次数据，然后从父组件向子组件传值即可解决问题。
+```js
+import axios from 'axios'
+// 在组件的挂载阶段(mounted)，触发方法getHomeInfo，通过这个方法来利用axios接收数据。
+methods: {
+  getHomeInfo () {
+    axios.get('/api/index.json')
+      .then(this.getHomeInfoSucc)
+  },
+  getHomeInfoSucc (res) {
+    res = res.data
+    if (res.ret && res.data) {
+      const data = res.data
+      this.city = data.city
+      this.swiperList = data.swiperList
+      this.iconList = data.iconList
+      this.recommandList = data.recommandList
+      this.weekendList = data.weekendList
+    }
+    console.log(res)
+  }
+},
+mounted () {
+  this.getHomeInfo()
+}
+```
+
+## 3. static目录下创建一个假数据包mock，里面有一个index.json。这个数据可以直接访问。
+## 4. .gitignore下添加static/mock，这样git提交仓库时就会忽略这个文件夹。
+## 5. 修改axios访问地址
+找到cogfig目录下的index.js找到module.export下的dev选项：
+给proxyTable添加内容：
+```js
+proxyTable: {
+  '/api': { // 当请求'/api'路径时
+    target: 'http://localhost:8080', // 转发到8080端口上
+    pathRewrite: { // 重写路径地址（作用是替换地址）
+      '^/api': '/static/mock'
+    }
+  }
+}
+```
+这样，当访问api/时，实际上是访问/static/mock。
+
+
+
+# city页面路由配置
+## 1. 创建City组件
+> src文件夹>pages文件夹>新建city文件夹>新建父组件City.vue+Components(中含有各种子组件)
+
+## 2. 配置路由
+找到router目录下的index.js
+引用+配置
+```js
+import City from '@/pages/city/City.vue'
+...
+{
+  path: '/city',
+  name: 'City',
+  component: City
+}
+```
+这之后，在8080端口后面加/City，就能访问到City组件的内容了。
+
+## 3. router-link标签(vue中的a标签)
+**to='跳转地址'** 相当于a链接中的href属性！
+```html
+<router-link to='/city'>
+  <div class="header-right">
+    {{this.city}}
+    <span class="iconfont arrow-icon">&#xe65a;</span>
+  </div>
+</router-link>
+```
+点击之后就可以完成从Home页到City页的跳转！
+
+
+

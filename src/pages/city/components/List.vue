@@ -23,6 +23,7 @@
       <div class="area"
         v-for="(item, key) of cities"
         :key="key"
+        :ref="key"
       >
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
@@ -42,10 +43,21 @@ export default {
   name: 'CityList',
   props: {
     cities: Object,
-    hot: Array
+    hot: Array,
+    letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: { // 监听letter的变化，点哪个字母就跳转到哪个字母对应的元素位置上去
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0] // this.$refs[this.letter]获取的是一个数组，下面的[0]才是真的dom元素
+        // console.log(element)
+        this.scroll.scrollToElement(element) // 自动滚动到某个元素上
+      }
+      // console.log(this.letter)
+    }
   }
 }
 </script>

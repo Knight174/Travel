@@ -60,7 +60,7 @@ export default {
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index]) // this.letters[index] index位置上的字母
           }
-        }, 16)
+        }, 8)
       }
     },
     handleTouchEnd () {

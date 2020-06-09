@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">无锡</div>
+            <div class="button">{{this.CrrentCity}}</div>
           </div>
         </div>
       </div>
@@ -15,6 +15,7 @@
           <div class="button-wrapper"
             v-for="item of hot"
             :key="item.id"
+            @click="handleCityClick(item.name)"
           >
             <div class="button">{{item.name}}</div>
           </div>
@@ -30,6 +31,7 @@
           <div class="item border-bottom"
             v-for="innerItem of item"
             :key="innerItem.id"
+            @click="handleCityClick(innerItem.name)"
           >{{innerItem.name}}</div>
         </div>
       </div>
@@ -39,6 +41,8 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   name: 'CityList',
   props: {
@@ -46,8 +50,20 @@ export default {
     hot: Array,
     letter: String
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+  computed: {
+    ...mapState({
+      CrrentCity: 'city'
+    })
+  },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.dispatch('changeCity', city)
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      // alert(city)
+      this.$router.push('/') // js式的页面跳转
+    },
+    ...mapMutations(['changeCity'])
   },
   watch: { // 监听letter的变化，点哪个字母就跳转到哪个字母对应的元素位置上去
     letter () {
@@ -58,6 +74,9 @@ export default {
       }
       // console.log(this.letter)
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>

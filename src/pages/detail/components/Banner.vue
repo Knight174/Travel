@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_600x330_bc326677.jpg" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
-        <div class="banner-title">灵山大佛(AAAAA景区)</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe65b;</span>
-          60
+          {{this.bannerImgs.length}}
         </div>
       </div>
     </div>
     <common-gallery
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallery"
       @close="handleGalleryClose"
     ></common-gallery>
@@ -24,9 +24,13 @@ export default {
   name: 'Banner',
   data () {
     return {
-      showGallery: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_r_800x800_cb4e4a42.jpg', 'http://img1.qunarzz.com/sight/p0/1911/bf/bf8c16067a50ca4da3.img.jpg_r_800x800_ffd0eaec.jpg']
+      showGallery: false
     }
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
   },
   methods: {
     handleBannerClick () {

@@ -62,6 +62,7 @@ export default {
       this.changeCity(city)
       // alert(city)
       this.$router.push('/') // js式的页面跳转
+      this.scroll.scrollToElement(this.$refs.wrapper)
     },
     ...mapMutations(['changeCity'])
   },
@@ -76,7 +77,10 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      scrollY: true,
+      click: true
+    })
   }
 }
 </script>

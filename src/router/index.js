@@ -12,11 +12,13 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
-    }, {
+    },
+    {
       path: '/city',
       name: 'City',
       component: () => import('@/pages/city/City.vue') // 异步路由
-    }, {
+    },
+    {
       path: '/detail/:id', // 动态路由
       name: 'Detail',
       component: () => import('@/pages/detail/Detail.vue')

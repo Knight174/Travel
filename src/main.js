@@ -16,13 +16,11 @@ Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 
-/* eslint-disable no-new */
+// 新语法 ***********************
 new Vue({
-  el: '#app',
   router,
   store,
-  components: { App },
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount('#app')
 
 // 路由就根据网址的不同，返回不同的内容给用户。

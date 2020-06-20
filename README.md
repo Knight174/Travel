@@ -1,24 +1,58 @@
-# travel
+[项目简述](#项目简述)
 
-> A Vue.js project
+[一、初始化（都在main.js中操作）](#初始化（都在main.js中操作）)
 
-## Build Setup
+[二、轮播图](#轮播图)
 
-``` bash
-# install dependencies
-npm install
+[三、icons图标](#icons图标)
 
-# serve with hot reload at localhost:8080
-npm run dev
+[四、recommand热门推荐](#recommand热门推荐)
 
-# build for production with minification
-npm run build
+[五、用axios发送ajax请求](#用axios发送ajax请求)
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+[六、city页面路由配置](#city页面路由配置)
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[七、城市选择页的列表布局](#城市选择页的列表布局)
+
+[八、用better-scroll来实现原生app上下滑动的效果](#用better-scroll来实现原生app上下滑动的效果)
+
+[九、右侧字母表区域布局](#右侧字母表区域布局)
+
+[十、城市选择页面的动态数据渲染](#城市选择页面的动态数据渲染)
+
+[十一、兄弟组件数据传递（从Alphabet到List，同步跳转）](#兄弟组件数据传递（从Alphabet到List，同步跳转）)
+
+[十二、同步滑动](#同步滑动)
+
+[十三、城市搜索框的搜索内容部分的逻辑](#城市搜索框的搜索内容部分的逻辑)
+
+[十四、vuex的基础使用](#vuex的基础使用)
+
+[十五、页面跳转的两种方式](#页面跳转的两种方式)
+
+[十六、vuex的高级使用](#vuex的高级使用)
+
+[十七、vuex代码优化（辅助函数）](#vuex代码优化（辅助函数）)
+
+[十八、keep-alive优化网页性能](#keep-alive优化网页性能)
+
+[十九、300ms延迟问题](#300ms延迟问题)
+
+[二十、动态路由](#动态路由)
+
+[二十一、渐变效果](#渐变效果)
+
+[二十二、iconfont重新下载](#iconfont重新下载)
+
+[二十三、公用图片画廊](#公用图片画廊)
+
+[二十四、详情页Header部分的显示与隐藏效果](#详情页Header部分的显示与隐藏效果)
+
+[二十五、递归组件与列表](#递归组件与列表)
+
+[二十六、动态获取详情页数据](#动态获取详情页数据)
+
+[二十七、基础动画和插槽](#基础动画和插槽)
 
 # 项目简述
 ## 0. 使用vue2.x语法，css部分利用预编译处理器stylus
@@ -1142,7 +1176,7 @@ scrollBehavior (to, from, savedPosition) {
 }
 ```
 
-# 基础动画（transition 和 slot）
+# 基础动画和插槽
 对于画廊的显示和隐藏可以用到动画。
 
 https://cn.vuejs.org/v2/guide/transitions.html

@@ -9,6 +9,7 @@
         <span class="item-title-icon"></span>
         {{item.title}}
       </div>
+      <!-- 递归组件：自己用自己 -->
       <div v-if="item.children" class="item-children">
         <detail-list :list="item.children"></detail-list>
       </div>
@@ -41,7 +42,7 @@ export default {
       margin-top .1rem
       margin-right .1rem
       background-size .4rem 3rem
-
+  // 递归的二级组件的样式
   .item-children
     padding 0 .2rem
 </style>

@@ -74,16 +74,22 @@ export default {
   methods: {
     handleCityClick (city) {
       this.changeCity(city)
-      this.$router.push('/')
       this.keyword = ''
+      this.$router.push('/')
     },
-    ...mapMutations(['changeCity'])
+    ...mapMutations(['changeCity']),
+    keywordBlank () {
+      this.keyword = ''
+    }
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search, {
       scrollY: true,
       click: true
     })
+  },
+  activated () {
+    this.keywordBlank()
   }
 }
 </script>

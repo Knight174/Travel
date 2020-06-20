@@ -81,6 +81,9 @@ export default {
       scrollY: true,
       click: true
     })
+  },
+  activated () {
+    this.scroll.refresh()
   }
 }
 </script>

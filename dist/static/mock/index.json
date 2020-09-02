@@ -1,0 +1,60 @@
+{
+  "ret": true,
+  "data": {
+    "swiperList": [
+      {"id": "0001", "imgUrl": "http://img1.qunarzz.com/sight/p0/2003/6c/6cd013b870474899a3.img.jpg_350x240_91f1395b.jpg"},
+      {"id": "0002", "imgUrl": "http://img1.qunarzz.com/sight/p0/1803/ae/ae876a8017aeadefa3.img.jpg_350x240_a891c2c3.jpg"}
+    ],
+    "iconList": [
+      {"id": "0001", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png", "desc": "景点门票"},
+      {"id": "0002", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png", "desc": "一日游"},
+      {"id": "0003", "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/74031dc434bba7426f5e1ae46565a9b6.png", "desc": "拈花湾"},
+      {"id": "0004", "imgUrl": "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/6b7127c142123eabcf3e41c136e0ccc2.png", "desc": "鼋头渚"},
+      {"id": "0005", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png", "desc": "融创乐园"},
+      {"id": "0006", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png", "desc": "踏青赏花"},
+      {"id": "0007", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png", "desc": "太湖秀"},
+      {"id": "0008", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png", "desc": "融创乐园"},
+      {"id": "0009", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/90/59a2f523ee2f9202.png", "desc": "灵山大佛"},
+      {"id": "0010", "imgUrl": "http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png", "desc": "三国城"}
+    ],
+    "recommandList": [{
+      "id": "0001", "imgUrl": "http://img1.qunarzz.com/sight/p0/1911/49/4988ed643a1c6eb4a3.img.jpg_200x200_e8ef6872.jpg",
+      "title": "灵山大佛",
+      "desc": "灵山胜境，虔诚佛音"
+    }, {
+      "id": "0002", "imgUrl": "http://img1.qunarzz.com/sight/p0/2005/a2/a280b11678ff3e5ca3.water.jpg_200x200_80d06223.jpg",
+      "title": "灵山小镇拈花湾",
+      "desc": "拈花湾，桃花岛"
+    }, {
+      "id": "0003", "imgUrl": "http://img1.qunarzz.com/sight/p0/1908/b6/b6b15bcaae16d02da3.water.jpg_200x200_bba6133c.jpg",
+      "title": "无锡融创海世界",
+      "desc": "畅游海洋，鲲之视角"
+    }],
+    "weekendList": [{
+        "id": "0001",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
+        "title": "北京温泉排行榜",
+        "desc": "细数北京温泉，温暖你的冬天"
+      }, {
+        "id": "0002",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",
+        "title": "北京必游TOP10",
+        "desc": "来北京必去的景点非这些地方莫属"
+      }, {
+        "id": "0003",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg",
+        "title": "寻找北京的皇城范儿",
+        "desc": "数百年的宫廷庙宇，至今依旧威严霸气"
+      }, {
+        "id": "0004",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg",
+        "title": "学生最爱的博物馆",
+        "desc": "周末干嘛？北京很多博物馆已经免费开放啦"
+      }, {
+        "id": "0005",
+        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/b2/fde1bfcd057a52.jpg_r_640x214_bbf3fa44.jpg",
+        "title": "儿童剧场，孩子的乐园",
+        "desc": "带宝贝观看演出，近距离体验艺术的无穷魅力"
+      }]
+  }
+}

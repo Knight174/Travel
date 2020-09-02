@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/static/mock/index.json?city=' + this.city)
+      axios.get('./mock/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {

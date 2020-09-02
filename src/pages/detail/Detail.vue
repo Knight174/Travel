@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getDetailInfo () {
-      axios.get('./mock/detail.json', {
+      axios.get('https://github.com/Knight174/Travel/blob/preview-pages/docs/static/mock/detail.json', {
         params: {
           id: this.$route.params.id
         }
